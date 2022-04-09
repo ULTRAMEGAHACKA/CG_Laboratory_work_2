@@ -1,6 +1,5 @@
 ﻿  CG_Laboratory_work_2.cpp
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(58,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(58,57): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(59,45): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(59,58): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(62,38): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(63,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(64,50): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   CG_Laboratory_work_2.vcxproj -> C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\x64\Debug\CG_Laboratory_work_2.exe

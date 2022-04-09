@@ -39,7 +39,7 @@ void RenderSceneCB()
     glDrawArrays(GL_LINE_LOOP, 0, 3); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
     //glDrawArrays(GL_LINE_LOOP, 3, 3);
     glm::vec3 Vertices[3];
-    scale += rand()%1-1;
+    scale += rand()%2-1;
     Vertices[0] = glm::vec3(0.5f, 0.0f, 0.0f);
     Vertices[1] = glm::vec3(1.0f, 0.5f, 0.0f);
     Vertices[2] = glm::vec3(0.0f, 0.5f, 0.0f);
@@ -47,10 +47,10 @@ void RenderSceneCB()
                                 0.0f, 1.0f, 0.0f, 0.0f,
                                 0.0f, 0.0f, 1.0f, 0.0f,
                                 sinf(scale), 0.0f, 0.0f, 1.0f);*/
-    glm::mat4 TranslationMatrix(cosf(scale), sinf(scale), 0.0f, 0.0f,
+    /*glm::mat4 TranslationMatrix(cosf(scale), sinf(scale), 0.0f, 0.0f,
                                 -sinf(scale), cosf(scale), 0.0f, 0.0f,
                                 0.0f, 0.0f, 1.0f, 0.0f,
-                                0.0f, 0.0f, 0.0f, 1.0f); //вокруг Z
+                                0.0f, 0.0f, 0.0f, 1.0f);*/ //вокруг Z
     /*glm::mat4 TranslationMatrix(cosf(scale), 0.0f, sinf(scale), 0.0f, 
                                 0.0f, 1.0f, cosf(scale), 0.0f,
                                 -sinf(scale), 0.0f, 0.0f, 0.0f,
@@ -59,6 +59,10 @@ void RenderSceneCB()
                                 0.0f, -sinf(scale), cosf(scale), 0.0f,
                                 0.0f, 0.0f, 1.0f, 0.0f,
                                 0.0f, 0.0f, 0.0f, 1.0f);*/ // вокруг X
+    glm::mat4 TranslationMatrix(sinf(scale), 0.0f, 0.0f, 0.0f,
+                                0.0f, sinf(scale), 0.0f, 0.0f,
+                                0.0f, 0.0f, sinf(scale), 0.0f,
+                                0.0f, 0.0f, 0.0f, 1.0f);
 
     for (int i = 0; i < 3; i++)
     {
