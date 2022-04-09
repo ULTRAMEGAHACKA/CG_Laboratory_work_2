@@ -7,7 +7,7 @@
 using namespace std;
 
 GLuint VBO;
-float scale = 0.0;
+double scale = 0.0;
 //class Vertexx
 //{
 //private:
@@ -43,10 +43,22 @@ void RenderSceneCB()
     Vertices[0] = glm::vec3(0.5f, 0.0f, 0.0f);
     Vertices[1] = glm::vec3(1.0f, 0.5f, 0.0f);
     Vertices[2] = glm::vec3(0.0f, 0.5f, 0.0f);
-    glm::mat4 TranslationMatrix(1.0f, 0.0f, 0.0f, 0.0f,
-        0.0f, 1.0f, 0.0f, 0.0f,
-        0.0f, 0.0f, 1.0f, 0.0f,
-        sinf(scale), 0.0f, 0.0f, 1.0f);
+    /*glm::mat4 TranslationMatrix(1.0f, 0.0f, 0.0f, 0.0f,
+                                0.0f, 1.0f, 0.0f, 0.0f,
+                                0.0f, 0.0f, 1.0f, 0.0f,
+                                sinf(scale), 0.0f, 0.0f, 1.0f);*/
+    glm::mat4 TranslationMatrix(cosf(scale), sinf(scale), 0.0f, 0.0f,
+                                -sinf(scale), cosf(scale), 0.0f, 0.0f,
+                                0.0f, 0.0f, 1.0f, 0.0f,
+                                0.0f, 0.0f, 0.0f, 1.0f); //вокруг Z
+    /*glm::mat4 TranslationMatrix(cosf(scale), 0.0f, sinf(scale), 0.0f, 
+                                0.0f, 1.0f, cosf(scale), 0.0f,
+                                -sinf(scale), 0.0f, 0.0f, 0.0f,
+                                0.0f, 0.0f, 0.0f, 1.0f);*/ //вокруг Y
+    /*glm::mat4 TranslationMatrix(1.0f, cosf(scale), sinf(scale), 0.0f,
+                                0.0f, -sinf(scale), cosf(scale), 0.0f,
+                                0.0f, 0.0f, 1.0f, 0.0f,
+                                0.0f, 0.0f, 0.0f, 1.0f);*/ // вокруг X
 
     for (int i = 0; i < 3; i++)
     {
