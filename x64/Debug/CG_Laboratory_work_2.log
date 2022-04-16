@@ -1,6 +1,18 @@
 ﻿  CG_Laboratory_work_2.cpp
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(50,38): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(50,51): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(51,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(51,52): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(27,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(29,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(29,27): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(30,15): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(30,28): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(34,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(34,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(35,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(36,15): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(39,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(39,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(40,21): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(40,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(44,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(45,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(46,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   CG_Laboratory_work_2.vcxproj -> C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\x64\Debug\CG_Laboratory_work_2.exe
