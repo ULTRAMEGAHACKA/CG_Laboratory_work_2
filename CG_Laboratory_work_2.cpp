@@ -4,10 +4,11 @@
 #include<glm/mat4x4.hpp>
 #include<glm/gtc/matrix_transform.hpp>
 #include <iostream>
+#include "PipeLine.h"
 using namespace std;
 
 GLuint VBO;
-double scale = 0.0;
+double Scale = 0.0;
 glm::vec3 Vertices[3];
 
 void RenderSceneCB()
@@ -15,40 +16,17 @@ void RenderSceneCB()
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     glEnableVertexAttribArray(0);
-    glColor4f(0.0f, 1.0f, 0.0f, 0.5);
-    glDrawArrays(GL_TRIANGLES, 0, 3); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
-    scale += 0.003;
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0);
+    glDrawArrays(GL_LINE_LOOP, 0, 3); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
+    Scale += 0.003;
     //glDrawArrays(GL_LINE_LOOP, 3, 3);
+    
+    Pipeline p;
+    p.Scale(sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f));
+    p.WorldPos(sinf(Scale), sinf(Scale), 0.0f);
+    p.Rotate(sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f);
 
-    glm::mat4 transformMatrix(
-        1.0f, 0.0f, 0.0f, 0.0f,
-        0.0f, 1.0f, 0.0f, 0.0f,
-        0.0f, 0.0f, 1.0f, 0.0f,
-        sinf(scale), 0.0f, 0.0f, 1.0f);
-    glm::mat4 transformMatrixZ(
-        cosf(scale), sinf(scale), 0.0f, 0.0f,
-        -sinf(scale), cosf(scale), 0.0f, 0.0f,
-        0.0f, 0.0f, 1.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f); //вокруг Z
-    glm::mat4 transformMatrixY(
-        cosf(scale), 0.0f, sinf(scale), 0.0f,
-        0.0f, 1.0f, cosf(scale), 0.0f,
-        -sinf(scale), 0.0f, 0.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f); //вокруг Y
-    glm::mat4 transformMatrixX(
-        1.0f, cosf(scale), sinf(scale), 0.0f,
-        0.0f, -sinf(scale), cosf(scale), 0.0f,
-        0.0f, 0.0f, 1.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f); // вокруг X
-    glm::mat4 transformMatrix5(
-        sinf(scale), 0.0f, 0.0f, 0.0f,
-        0.0f, sinf(scale), 0.0f, 0.0f,
-        0.0f, 0.0f, sinf(scale), 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f);
-
-
-    glm::mat4 BASEtransformMatrix = transformMatrixZ * transformMatrixX * transformMatrix5;
-    glLoadMatrixf(reinterpret_cast<const float*>(&BASEtransformMatrix));
+    glLoadMatrixf(reinterpret_cast<const float*>(p.GetTrans()));
 
     glDisableVertexAttribArray(0);
     glutSwapBuffers();

@@ -1,18 +1,17 @@
 ﻿  CG_Laboratory_work_2.cpp
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(27,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(29,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(29,27): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(30,15): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(30,28): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(34,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(34,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(35,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(36,15): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(39,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(39,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(40,21): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(40,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(44,14): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(45,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(46,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(61,25): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(61,23): warning C4244: инициализация: преобразование "double" в "const float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(62,25): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(62,23): warning C4244: инициализация: преобразование "double" в "const float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(63,25): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(63,23): warning C4244: инициализация: преобразование "double" в "const float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(25,24): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(25,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(25,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(26,21): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(26,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(27,19): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(27,40): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(27,61): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(83): warning C4172: возвращение адреса локальной или временной переменной : m_transformation
   CG_Laboratory_work_2.vcxproj -> C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\x64\Debug\CG_Laboratory_work_2.exe
