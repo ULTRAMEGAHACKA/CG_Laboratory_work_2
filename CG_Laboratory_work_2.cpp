@@ -9,35 +9,66 @@ using namespace std;
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 
-GLuint VBO;
-GLuint IBO;
-glm::vec3 Vertices[4];
+GLuint VBO1;
+GLuint VBO2;
+GLuint IBO1;
+GLuint IBO2;
+
+GLuint pyramid1VertexArrayObjectId;
+GLuint pyramid2VertexArrayObjectId;
+
+
+glm::vec3 Vertices1[4];
+glm::vec3 Vertices2[4];
 
 void RenderSceneCB()
 {
     glClear(GL_COLOR_BUFFER_BIT);
 
     static float Scale = 0.0f;
-    Scale += 0.003;
+    static float Scale2 = 0.0f;
+    Scale += 0.05;
+    Scale2 += 0.005;
     
     Pipeline p;
-    //p.Scale(sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f));//sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f)
-    p.WorldPos(sinf(Scale), 0.0f, 10.0f);
-    p.Rotate(sinf(Scale) * 90, sinf(Scale) * 90, sinf(Scale) * 90);//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
-    p.SetPerspectiveProj(30.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 1000.0f);
+    Pipeline p1;
 
+    //p.Scale(sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f));//sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f)
+    p.WorldPos(sinf(Scale2), 0.0f, 10.0f);//sinf(Scale)
+    p.Rotate(Scale, Scale, Scale);//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
+    p.SetPerspectiveProj(30.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 1000.0f);
+    
     glLoadMatrixf(reinterpret_cast<const float*>(p.GetTrans()));
 
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     glEnableVertexAttribArray(0);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO1);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO1);
+
     glColor4f(1.0f, 1.0f, 0.0f, 1.0);
-    //glDrawArrays(GL_LINE_LOOP, 0, 3); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
-    glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_LINE_LOOP, 12, GL_UNSIGNED_INT, 0);
+
+    //glDrawArrays(GL_LINE_LOOP, 0, 8); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
+    
+    glDisableVertexAttribArray(0);
+    p1.WorldPos(sinf(Scale2), sinf(Scale2), 10.0f);//sinf(Scale)
+    p1.Rotate(Scale2, Scale2, Scale2);//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
+    p1.SetPerspectiveProj(30.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 1000.0f);
+
+    glLoadMatrixf(reinterpret_cast<const float*>(p1.GetTrans()));
+    glEnableVertexAttribArray(0);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO2);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO2);
+
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0);
+    glDrawElements(GL_LINE_LOOP, 12, GL_UNSIGNED_INT, 0);
+
+    //glDrawArrays(GL_LINE_LOOP, 0, 8); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
 
     glDisableVertexAttribArray(0);
 
@@ -46,24 +77,42 @@ void RenderSceneCB()
 }
 static void CreateVertexBuffer()
 {
-    Vertices[0] = glm::vec3(-1.0f, -1.0f, 0.5773f);
-    Vertices[1] = glm::vec3(0.0f, -1.0f, -1.15475);
-    Vertices[2] = glm::vec3(1.0f, -1.0f, 0.5773f);
-    Vertices[3] = glm::vec3(0.0f, 1.0f, 0.0f);
+    Vertices1[0] = glm::vec3(-1.0f, -1.0f, 0.5773f);
+    Vertices1[1] = glm::vec3(0.0f, -1.0f, -1.15475);
+    Vertices1[2] = glm::vec3(0.5f, -1.0f, 0.5773f);
+    Vertices1[3] = glm::vec3(0.0f, 1.0f, 0.0f);
 
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+    glGenBuffers(1, &VBO1);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO1);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices1), Vertices1, GL_STATIC_DRAW);
+
+    Vertices2[0] = glm::vec3(-1.0f, -1.0f, -0.7f);
+    Vertices2[1] = glm::vec3(0.0f, -1.0f, -1.5f);
+    Vertices2[2] = glm::vec3(1.0f, -1.0f, -1.0f);
+    Vertices2[3] = glm::vec3(0.0f, 1.0f, -0.8f);
+
+    glGenBuffers(1, &VBO2);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO2);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices2), Vertices2, GL_STATIC_DRAW);
 }
 static void CreateIndexBuffer()
 {
-    unsigned int Indices[] = { 0, 3, 1,
-                               1, 3, 2,
-                               2, 3, 0,
-                               0, 2, 1 };
+    unsigned int Indices[] = {  0, 3, 1,
+                                1, 3, 2,
+                                2, 3, 0,
+                                0, 2, 1 };
 
-    glGenBuffers(1, &IBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glGenBuffers(1, &IBO1);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO1);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
+
+    unsigned int Indices2[] = { 0, 3, 1,
+                                1, 3, 2,
+                                2, 3, 0,
+                                0, 2, 1 };
+
+    glGenBuffers(1, &IBO2);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO2);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
 }
 int main(int argc, char** argv)
@@ -95,7 +144,6 @@ int main(int argc, char** argv)
     Vertices[1] = glm::vec3(0.0f, -1.0f, -1.15475);
     Vertices[2] = glm::vec3(1.0f, -1.0f, 0.5773f);
     Vertices[3] = glm::vec3(0.0f, 1.0f, 0.0f);*/
-    //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
     CreateVertexBuffer();
     CreateIndexBuffer();
