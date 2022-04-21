@@ -48,20 +48,36 @@ public:
         m_persProj.zNear = zNear;
         m_persProj.zFar = zFar;
     }
+    void Normalize(glm::vec3 vector)
+    {
+        const float Length = sqrtf(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
+        vector.x /= Length;
+        vector.y /= Length;
+        vector.z /= Length;
+    }
+    glm::vec3 Cross(const glm::vec3& v1, glm::vec3 v2) const
+    {
+        const float _x = v2.y * v1.z - v2.z * v1.y;
+        const float _y = v2.z * v1.x - v2.x * v1.z;
+        const float _z = v2.x * v1.y - v2.y * v1.x;
+
+        return glm::vec3(_x, _y, _z);
+    }
     const glm::mat4* GetTrans() 
     {
+        //=========================================
         glm::mat4 ScaleTrans(
             sinf(m_scale.x), 0.0f, 0.0f, 0.0f,
             0.0f, sinf(m_scale.y), 0.0f, 0.0f,
             0.0f, 0.0f, sinf(m_scale.z), 0.0f,
             0.0f, 0.0f, 0.0f, 1.0f); // размер
-        
+        //=========================================
         glm::mat4 TranslationTrans(
             1.0f, 0.0f, 0.0f, 0.0f,
             0.0f, 1.0f, 0.0f, 0.0f,
             0.0f, 0.0f, 1.0f, 0.0f  ,
             m_worldPos.x, m_worldPos.y, m_worldPos.z, 1.0f); // положение
-
+        //=========================================
         const float x = glm::radians(m_rotateInfo.x);
         const float y = glm::radians(m_rotateInfo.y);
         const float z = glm::radians(m_rotateInfo.z);
@@ -82,21 +98,46 @@ public:
             0.0f, sinf(x), cosf(x), 0.0f,
             0.0f, 0.0f, 0.0f, 1.0f); // вокруг X
         glm::mat4x4 RotateTrans = transformMatrixZ * transformMatrixY * transformMatrixX;
-
+        //=========================================
         const float ar = m_persProj.Width / m_persProj.Height;
         const float zNear = m_persProj.zNear;
         const float zFar = m_persProj.zFar;
         const float zRange = zNear - zFar;
         const float tanHalfFOV = tanf(glm::radians(m_persProj.FOV / 2.0));
-
         glm::mat4 PersProjTrans(
             1.0f / (tanHalfFOV * ar), cosf(x), sinf(x), 0.0f,
             0.0f, 1.0f / tanHalfFOV, cosf(x), 0.0f,
             0.0f, 0.0f, (-zNear - zFar) / zRange, 1.0f,
             0.0f, 0.0f, 2.0f * zFar * zNear / zRange, 0.0f);
+        //=========================================
+        glm::vec3 N = m_camera.Target; // m_camera.Target, m_camera.Up
+        Normalize(N);
+        glm::vec3 U = m_camera.Up;
+        Normalize(U);
+        U = Cross(m_camera.Target,U);
+        glm::vec3 V = Cross(U,N);
 
-        glm::mat4 m_transformation = PersProjTrans * TranslationTrans * RotateTrans * ScaleTrans;
+        glm::mat4 CameraRotateTrans(
+            U.x, V.x, N.x, 0.0f,
+            U.y, V.y, N.y, 0.0f,
+            U.z, V.z, N.z, 0.0f,
+            0.0f, 0.0f, 0.0f, 1.0f);
+        //=========================================
+        glm::mat4 CameraTranslationTrans(
+            1.0f, 0.0f, 0.0f, 0.0f,
+            0.0f, 1.0f, 0.0f, 0.0f,
+            0.0f, 0.0f, 1.0f, 0.0f,
+            -m_camera.Pos.x, -m_camera.Pos.y, -m_camera.Pos.z, 1.0f);
+        //=========================================
+
+        glm::mat4 m_transformation = PersProjTrans * CameraRotateTrans * CameraTranslationTrans * TranslationTrans * RotateTrans * ScaleTrans;
         return &m_transformation;
+    }
+    void SetCamera(const glm::vec3& Pos, const glm::vec3& Target, const glm::vec3& Up)
+    {
+        m_camera.Pos = Pos;
+        m_camera.Target = Target;
+        m_camera.Up = Up;
     }
 
 private:
@@ -111,6 +152,11 @@ private:
         float zNear;
         float zFar;
     } m_persProj;
+    struct {
+        glm::vec3 Pos;
+        glm::vec3 Target;
+        glm::vec3 Up;
+    } m_camera;
 };
 
 #endif	/* PIPELINE_H */

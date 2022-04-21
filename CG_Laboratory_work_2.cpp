@@ -35,7 +35,13 @@ void RenderSceneCB()
 
     //p.Scale(sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f));//sinf(Scale * 0.1f), sinf(Scale * 0.1f), sinf(Scale * 0.1f)
     p.WorldPos(sinf(Scale2), 0.0f, 10.0f);//sinf(Scale)
-    p.Rotate(Scale, Scale, Scale);//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
+    p.Rotate(Scale, Scale ,  Scale );//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
+
+    glm::vec3 CameraPos(1.0f, 1.0f, -3.0f);
+    glm::vec3 CameraTarget(0.0f, 0.0f, 2.0f);
+    glm::vec3 CameraUp(0.0f, 1.0f, 0.0f);
+    p.SetCamera(CameraPos, CameraTarget, CameraUp);
+
     p.SetPerspectiveProj(30.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 1000.0f);
     
     glLoadMatrixf(reinterpret_cast<const float*>(p.GetTrans()));
@@ -50,26 +56,27 @@ void RenderSceneCB()
 
     glColor4f(1.0f, 1.0f, 0.0f, 1.0);
     glDrawElements(GL_LINE_LOOP, 12, GL_UNSIGNED_INT, 0);
-
-    //glDrawArrays(GL_LINE_LOOP, 0, 8); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
     
     glDisableVertexAttribArray(0);
-    p1.WorldPos(sinf(Scale2), sinf(Scale2), 10.0f);//sinf(Scale)
-    p1.Rotate(Scale2, Scale2, Scale2);//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
-    p1.SetPerspectiveProj(30.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 1000.0f);
+    p1.WorldPos(0.0f/*sinf(Scale2)*/, 0.0f/*sinf(Scale2)*/, 10.0f);//sinf(Scale)
+    p1.Rotate(0.0f/*Scale2*/, 0.0f/*Scale2*/, 0.0f/*Scale2*/);//sinf(Scale) * 90.0f, sinf(Scale) * 90.0f, sinf(Scale) * 90.0f
+    glm::vec3 CameraPos1(1.0f, 1.0f, -3.0f);
+    glm::vec3 CameraTarget1(0.0f, 0.0f, 2.0f);
+    glm::vec3 CameraUp1(0.0f, 1.0f, 0.0f);
+    p1.SetCamera(CameraPos1, CameraTarget1, CameraUp1);
 
+    p1.SetPerspectiveProj(30.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 1000.0f);
+    
     glLoadMatrixf(reinterpret_cast<const float*>(p1.GetTrans()));
     glEnableVertexAttribArray(0);
-
+    
     glBindBuffer(GL_ARRAY_BUFFER, VBO2);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO2);
-
+    
     glColor4f(1.0f, 1.0f, 0.0f, 1.0);
     glDrawElements(GL_LINE_LOOP, 12, GL_UNSIGNED_INT, 0);
-
-    //glDrawArrays(GL_LINE_LOOP, 0, 8); // GL_TRIANGLES // GL_LINE_LOOP // GL_LINE_STRIP
-
+    
     glDisableVertexAttribArray(0);
 
     glutSwapBuffers();

@@ -1,10 +1,10 @@
 ﻿  CG_Laboratory_work_2.cpp
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(90,51): warning C4244: аргумент: преобразование "genType" в "float", возможна потеря данных
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(106,51): warning C4244: аргумент: преобразование "genType" в "float", возможна потеря данных
           with
           [
               genType=double
           ]
 C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(30,18): warning C4305: +=: усечение из "double" в "float"
 C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\CG_Laboratory_work_2.cpp(31,20): warning C4305: +=: усечение из "double" в "float"
-C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(99): warning C4172: возвращение адреса локальной или временной переменной : m_transformation
+C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\CG_Laboratory_work_2\PipeLine.h(134): warning C4172: возвращение адреса локальной или временной переменной : m_transformation
   CG_Laboratory_work_2.vcxproj -> C:\Users\Delir.DESKTOP-C7SGQLK\source\repos\CG_Laboratory_work_2\x64\Debug\CG_Laboratory_work_2.exe
