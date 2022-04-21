@@ -1,6 +1,6 @@
-Laboratory work №1 (Computer graphics)
+Laboratory work №2 (Computer graphics)
 ======================================
-*In this lab work we create a window, point and triangles*
+*In this lab, we rotate, move, resize our object, create a pyramid, set camera position, and project from 3D to 2D*
 
 main.cpp
 ==============
